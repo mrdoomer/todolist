@@ -24,7 +24,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 150px; /* Adjust width as needed */
+    width: 200px; /* Adjust width as needed */
     height: 100%; /* Ensure sidebar covers the entire height */
     background-color: #f8f9fa; /* Example background color */
     z-index: 999; /* Lower z-index to ensure it's behind the header */
@@ -32,7 +32,7 @@ header {
 
 /* CSS for body content */
 .container {
-    margin-left: 150px; /* Adjust margin to account for sidebar width */
+    margin-left: 200px; /* Adjust margin to account for sidebar width */
     padding-top: 60px; /* Ensure content is below the header */
 }
 

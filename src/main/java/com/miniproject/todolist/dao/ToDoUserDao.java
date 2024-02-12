@@ -1,5 +1,7 @@
 package com.miniproject.todolist.dao;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.miniproject.todolist.beans.ToDoBean;
 import com.miniproject.todolist.beans.TodoUserBean;
 
 @Repository
@@ -35,5 +38,53 @@ public class ToDoUserDao {
 		  return user  ;
 		  
 	  }
+	  
+	  public boolean checkIfUserAlreadyExist(String username) {
+		  boolean isPresent =false;
+		  jdbcTemplate = new JdbcTemplate(datasource);
+		  String sql = "select count(*) from user_management.users where username = ?";
+		  int count= jdbcTemplate.queryForObject(sql,new Object[] {username},Integer.class);
+		  if(count>0) {
+			  isPresent=true;
+		  }
+		  return isPresent;
+		  
+		  
+	  }
+	
+	  public boolean checkIfEmailExist(String mailid) {
+		  boolean isPresent = false;
+		  jdbcTemplate = new JdbcTemplate(datasource);
+		  String sql = "select count(*) from user_management.users where email= ?";
+		  int count = jdbcTemplate.queryForObject(sql,new Object[] {mailid},Integer.class);
+		  if(count>0) {
+			  isPresent=true;
+		  }
+		  return isPresent;  	  
+	  }
+
+
+	public int registerUser(TodoUserBean todoUserBean) {
+		jdbcTemplate = new JdbcTemplate(datasource);
+		String sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+		return jdbcTemplate.update(sql,new Object[] {todoUserBean.getUsername(),todoUserBean.getEmail(),todoUserBean.getPassword()});
+	}
+	
+	
+	public List<ToDoBean> getUserTodoFromId(String userId){
+		jdbcTemplate = new JdbcTemplate(datasource);
+		String sql = "select * from `user_management`.`todos` where user_id= ?";
+		return jdbcTemplate.query(sql, new Object[] {userId}, new BeanPropertyRowMapper<>(ToDoBean.class));
+		
+	}
+
+
+	public int saveToDo(ToDoBean todoBean) {
+		jdbcTemplate = new JdbcTemplate(datasource);
+		String  sql = "INSERT INTO todos (task, description, due_date, completed, user_id) "
+				+ " VALUES "
+				+ " (?, ?, ?, ?, ?);";
+		return jdbcTemplate.update(sql,new Object[]{todoBean.getTask(),todoBean.getDescription(),todoBean.getDue_date(),false,todoBean.getUser_id()});
+	}
 
 }

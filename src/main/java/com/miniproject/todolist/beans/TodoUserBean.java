@@ -11,9 +11,29 @@ public class TodoUserBean implements Serializable{
 	private String user_id;
 	private String username ;
 	private String email;
-private String password;	
+	private String password;	
+	private String message ;
+	private String errorMessage;
+	
+	
+	
+	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public String getPassword() {
 	return password;
+	
 }
 public void setPassword(String password) {
 	this.password = password;
