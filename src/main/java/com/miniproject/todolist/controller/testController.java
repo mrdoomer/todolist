@@ -9,9 +9,5 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class testController {
 
-	@GetMapping("/login")
-	public ModelAndView testJsp(HttpServletRequest request) {
-		ModelAndView  test = new ModelAndView("commons/Login");
-		return test;
-	}
+
 }
