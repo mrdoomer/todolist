@@ -1,7 +1,13 @@
 package com.miniproject.todolist.beans;
 
-public class TodoUserBean {
+import java.io.Serializable;
+
+public class TodoUserBean implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String user_id;
 	private String username ;
 	private String email;
