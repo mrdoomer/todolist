@@ -63,7 +63,7 @@
                             <button type="submit" class="btn btn-login btn-block"><i class="fas fa-sign-in-alt me-2"></i>Login</button>
                         </form>
                         <div class="text-center mt-3">
-                            <p class="mb-0">Don't have an account? <a href="register.html">Register here</a></p>
+                            <p class="mb-0">Don't have an account? <a href="/register">Register here</a></p>
                         </div>
                     </div>
                 </div>

@@ -1,43 +1,72 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+<!-- jscss/style.css -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ --><!-- jscss/scripts.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<!-- jscss/scripts.js -->
+<style>
+/* CSS for header */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header appears above the sidebar */
 }
 
-.sidebar {
-  background-color: #f4f4f4;
-  width: 200px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+/* CSS for left sidebar */
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px; /* Adjust width as needed */
+    height: 100%; /* Ensure sidebar covers the entire height */
+    background-color: #f8f9fa; /* Example background color */
+    z-index: 999; /* Lower z-index to ensure it's behind the header */
 }
 
-.tabs {
-  padding-top: 20px;
+/* CSS for body content */
+.container {
+    margin-left: 150px; /* Adjust margin to account for sidebar width */
+    padding-top: 60px; /* Ensure content is below the header */
 }
 
-.tab {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+.sidenav h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
 }
 
-.tab:hover {
-  background-color: #ddd;
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-main {
-  margin-left: 200px; /* Adjust based on sidebar width */
-  padding: 20px;
+.sidenav ul li {
+    padding: 10px 20px;
 }
 
+.sidenav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidenav ul li a:hover {
+    color: #007bff;
+}
+
+@media screen and (max-width: 768px) {
+    .sidenav {
+        width: 200px;
+    }
+}
+
+  </style>
+  
