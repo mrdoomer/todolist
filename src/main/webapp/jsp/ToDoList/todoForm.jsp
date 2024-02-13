@@ -64,7 +64,7 @@
 										onclick="getData(this)"> Edit</button>
 										 <input type="button"
 											value="Delete" data-todo-id=${sr.id } class="delete"
-											onclick="delete_row(this)">
+											onclick="deleteTodo(this)">
 									</tr>
 								</c:forEach>
 							</tbody>
