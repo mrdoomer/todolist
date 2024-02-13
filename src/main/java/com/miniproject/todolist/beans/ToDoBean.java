@@ -3,6 +3,7 @@ package com.miniproject.todolist.beans;
 import java.io.Serializable;
 
 public class ToDoBean implements Serializable{
+	private String id;
 	private String user_id;
 	private String task;
 	private String description ;
@@ -10,6 +11,13 @@ public class ToDoBean implements Serializable{
 	private String completed ;
 	
 	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getUser_id() {
 		return user_id;
 	}
@@ -39,6 +47,11 @@ public class ToDoBean implements Serializable{
 	}
 	public void setCompleted(String completed) {
 		this.completed = completed;
+	}
+	@Override
+	public String toString() {
+		return "ToDoBean [id=" + id + ", user_id=" + user_id + ", task=" + task + ", description=" + description
+				+ ", due_date=" + due_date + ", completed=" + completed + "]";
 	}
 	
 

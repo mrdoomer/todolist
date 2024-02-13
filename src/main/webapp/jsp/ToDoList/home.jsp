@@ -23,6 +23,9 @@
 		<h2 class="red text-capitalize">List Of Todos</h2>
 		<div class="clearfix"></div>
 		<div class="panel-content-wrapper">
+		<c:if test="${rowCount eq 0 }">
+		<h1 ><b>No ToDo Found</b></h1>
+		</c:if>
 			<c:if test="${rowCount > 0}">
 				<h2 style="font-size: 19.2px; font-weight: bold;">My ToDos (${rowCount} Records Found)</h2>
 				<div class="clearfix"></div>

@@ -87,4 +87,18 @@ public class ToDoUserDao {
 		return jdbcTemplate.update(sql,new Object[]{todoBean.getTask(),todoBean.getDescription(),todoBean.getDue_date(),false,todoBean.getUser_id()});
 	}
 
+
+	public int updateToDoById(ToDoBean toDoBean) {
+		jdbcTemplate = new JdbcTemplate(datasource);
+		String sql = "update user_management.todos set task= ?, description=? ,due_date=?, completed=?  where id = ? ";
+		return jdbcTemplate.update(sql, new Object[] {toDoBean.getTask(),toDoBean.getDescription(),toDoBean.getDue_date(),toDoBean.getCompleted(),toDoBean.getId()});
+	}
+
+
+	public int deleteToDoById(String id) {
+		jdbcTemplate = new JdbcTemplate(datasource);
+		String sql = "delete from user_management.todos where id = ? ";
+		return jdbcTemplate.update(sql, new Object[] {id});		
+	}
+
 }
