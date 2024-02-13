@@ -17,7 +17,7 @@
 <aside class="sidenav">
     <h2>Todo App</h2>
     <ul>
-        <li><a href="">Todo List</a></li>
+        <li><a href="/todolist/">Todo List</a></li>
         <li><a href="addToDo">Add Todo</a></li>
          <li><a href="TodoForm">Edit/Delete/Marked as Completed </a></li>
     </ul>

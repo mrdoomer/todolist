@@ -12,8 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.util.AntPathMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -69,6 +69,51 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 	            .logoutSuccessUrl("/logout-success").permitAll().and().headers().frameOptions().disable();;
 	}
+
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//	    http
+//	        .csrf().disable()
+//	        .authorizeRequests()
+//	            .antMatchers("/todolist/login", "/todolist/register", "/todolist/saveUser").permitAll()
+//	            .anyRequest().authenticated()
+//	            .and()
+//	        .formLogin()
+//	            .loginPage("/todolist/login").permitAll()
+//	            .and()
+//	        .logout()
+//	            .invalidateHttpSession(true)
+//	            .clearAuthentication(true)
+//	            .logoutRequestMatcher(new AntPathRequestMatcher("/todolist/logout"))
+//	            .logoutSuccessUrl("/todolist/logout-success").permitAll()
+//	            .and()
+//	        .headers().frameOptions().disable()
+//	        .and()
+//	        .exceptionHandling().accessDeniedPage("/todolist/login");
+//	}
+
+	
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//	    http
+//	        .csrf().disable()
+//	        .authorizeRequests()
+//	            .antMatchers("/todolist/login", "/todolist/register", "/todolist/saveUser").permitAll()
+//	            .anyRequest().authenticated()
+//	            .and()
+//	        .formLogin()
+//	            .loginPage("/todolist/login").permitAll()
+//	            .and()
+//	        .logout()
+//	            .invalidateHttpSession(true)
+//	            .clearAuthentication(true)
+//	            .logoutRequestMatcher(new AntPathRequestMatcher("/todolist/logout"))
+//	            .logoutSuccessUrl("/todolist/logout-success").permitAll()
+//	            .and()
+//	        .headers().frameOptions().disable()
+//	        .and()
+//	        .exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/todolist/login"));
+//	}
 
 
 	@Bean 

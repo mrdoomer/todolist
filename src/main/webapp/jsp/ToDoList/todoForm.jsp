@@ -89,7 +89,8 @@
 											required>
 										<input
 											type="hidden" class="form-control" id="id" name="id"
-											required>
+											required/>
+																					
 									</div>
 									<div class="mb-3">
 										<label for="description" class="form-label">Description</label>
@@ -154,7 +155,7 @@
 		      data: {
 		        'id': document.getElementById('id').value ,
 		        'description': document.getElementById('description').value,
-		        'dueDate': document.getElementById('dueDate').value,
+		        'due_date': document.getElementById('dueDate').value,
 		        'task' : document.getElementById('task').value,
 		        'completed' : document.getElementById('Completed').value
 		      

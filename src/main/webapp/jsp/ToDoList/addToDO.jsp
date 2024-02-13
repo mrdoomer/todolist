@@ -20,7 +20,7 @@
 					<h2>Add Todo</h2>
 					<jsp:include page="../commons/Messages.jsp" />
 
-					<form action ="/SaveToDo" method="post">
+					<form action ="SaveToDo" method="post">
 						<div class="mb-3">
 							<label for="task" class="form-label">Task</label> <input
 								type="text" class="form-control" id="task" name="task" required>
